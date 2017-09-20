@@ -42,8 +42,8 @@ export class HeroesComponent implements OnInit {
     if (!name) { return; }
     if (!edad) { return; }
     this.heroService.create(name, edad)
-      .then(hero => {
-        this.heroes = hero;
+      .then(heroes => {
+        this.heroes = heroes;
         this.selectedHero = null;
       });
   }
