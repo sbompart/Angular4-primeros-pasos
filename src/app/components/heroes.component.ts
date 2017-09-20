@@ -43,7 +43,7 @@ export class HeroesComponent implements OnInit {
     if (!edad) { return; }
     this.heroService.create(name, edad)
       .then(hero => {
-        this.heroes.push(hero);
+        this.heroes = hero;
         this.selectedHero = null;
       });
   }

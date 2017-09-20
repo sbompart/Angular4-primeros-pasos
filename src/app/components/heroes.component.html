@@ -1,14 +1,13 @@
 <h2>My Heroes</h2>
 <div>
-  <label>Hero name:</label> <input #heroName />
-  <button (click)="add(heroName.value); heroName.value=''">
+  <label>Hero Name:</label> <input #heroName />
+  <label>Hero Edad:</label> <input #heroEdad />
+  <button (click)="add(heroName.value, heroEdad.value); heroName.value=''">
     Add
   </button>
 </div>
 <ul class="heroes">
-  <li *ngFor="let hero of heroes; let i = index"
-      [class.selected]="hero === selectedHero"
-      (click)="onSelect(hero)">
+  <li *ngFor="let hero of heroes; let i = index" [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
     <span class="badge">{{i+1}}</span> {{hero.name}}
     <button class="delete" (click)="delete(hero); $event.stopPropagation()">x</button>
   </li>
